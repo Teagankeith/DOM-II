@@ -51,4 +51,43 @@ textColor.addEventListener("keyup", () => {
 })
 
 
-//(7/10)
+//Changes the color of the body on drag(7/10)
+
+let dragEl = document.querySelector("body");
+
+dragEl.addEventListener("drag", () => {
+    dragEl.style.color = "purple";
+})
+
+
+//Changes the color of the body back to default on drop (8/10)
+
+dragEl.addEventListener("drop", () => {
+    dragEl.style.color = "black";
+})
+
+
+//Makes the size of the img scaled higher or lower (9/10)
+function zoom(event) {
+    event.preventDefault();
+  
+    scale += event.deltaY * -0.01;
+  
+    // scale restriction
+    scale = Math.min(Math.max(.125, scale), 4);
+    //transform
+    el.style.transform = `scale(${scale})`;
+  }
+  
+  let scale = 1;
+  const el = document.querySelector('img');
+  el.onwheel = zoom;
+
+
+  //Transitions the page when loaded
+
+  let wholePage = document.querySelector("document");
+
+  wholePage.addEventListener("load", () => {
+    
+  })
