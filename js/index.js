@@ -84,10 +84,11 @@ function zoom(event) {
   el.onwheel = zoom;
 
 
-  //Transitions the page when loaded
+  //Spins the Image once the mouse goes over the element (10/10)
 
-  let wholePage = document.querySelector("document");
+  let boatImg = document.querySelector("#destinationImg");
 
-  wholePage.addEventListener("load", () => {
-    
+  boatImg.addEventListener("mouseover", () => {
+    boatImg.style.transform = "rotate(360deg)";
+    boatImg.style.transition = "transform 1s";
   })
